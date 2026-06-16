@@ -1,4 +1,3 @@
 public enum DiaSemana {
-    SEGUNDA,
-    TERCA
+    SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA
 }
