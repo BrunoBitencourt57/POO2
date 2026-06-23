@@ -25,4 +25,27 @@ public final class Horario {
     public String toString() {
         return diaSemana + " - " + periodo;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (this == obj) {
+            return true;
+        }
+
+        if (!(obj instanceof Horario)) {
+            return false;
+        }
+
+        Horario outro = (Horario) obj;
+
+        return diaSemana == outro.diaSemana
+                && periodo == outro.periodo;
+    }
+
+    @Override
+    public int hashCode() {
+        return diaSemana.hashCode() * 31
+                + periodo.hashCode();
+    }
 }
