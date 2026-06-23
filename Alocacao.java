@@ -3,7 +3,6 @@ public class Alocacao {
     private Disciplina disciplina;
     private Professor professor;
     private Horario horario;
-    private Turma turma;
 
 
     public Alocacao(Disciplina disciplina,
