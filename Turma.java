@@ -1,32 +1,43 @@
 public class Turma {
 
-    private String nome;
-    private int semestre;
+    private Disciplina disciplina;
+    private Professor professor;
+    private Horario horario;
 
-    public Turma(String nome, int semestre) {
+    public Turma(Disciplina disciplina,
+                 Professor professor,
+                 Horario horario) {
 
-        if (nome == null || nome.isBlank()) {
-            throw new IllegalArgumentException("Nome da turma inválido.");
+        if (disciplina == null ||
+            professor == null ||
+            horario == null) {
+
+            throw new IllegalArgumentException("Dados inválidos.");
         }
 
-        if (semestre <= 0) {
-            throw new IllegalArgumentException("Semestre inválido.");
-        }
-
-        this.nome = nome;
-        this.semestre = semestre;
+        this.disciplina = disciplina;
+        this.professor = professor;
+        this.horario = horario;
     }
 
-    public String getNome() {
-        return nome;
+    public Disciplina getDisciplina() {
+        return disciplina;
     }
 
-    public int getSemestre() {
-        return semestre;
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public Horario getHorario() {
+        return horario;
     }
 
     @Override
     public String toString() {
-        return nome + " - " + semestre + "º semestre";
+        return disciplina.getNome()
+                + " - "
+                + professor.getNome()
+                + " - "
+                + horario;
     }
 }
