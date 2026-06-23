@@ -11,11 +11,11 @@ public class Grade {
     }
 
     public void adicionarAlocacao(Alocacao alocacao) {
-       
+
         if (alocacao == null) {
             throw new IllegalArgumentException("A alocação não pode ser nula.");
         }
-       
+
         this.alocacoes.add(alocacao);
     }
 
@@ -31,5 +31,9 @@ public class Grade {
             sb.append(alocacao.toString()).append("\n");
         }
         return sb.toString();
+    }
+
+    public void exibirGrade() {
+        System.out.println(this.toString());
     }
 }
