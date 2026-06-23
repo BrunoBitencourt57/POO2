@@ -4,31 +4,31 @@ import java.util.List;
 
 public class Grade {
 
-    private List<Alocacao> alocacoes;
+    private List<> Turmas;
 
     public Grade() {
-        this.alocacoes = new ArrayList<>();
+        this.Turmas = new ArrayList<>();
     }
 
-    public void adicionarAlocacao(Alocacao alocacao) {
+    public void adicionarTurma(Turma Turma) {
        
-        if (alocacao == null) {
+        if (Turma == null) {
             throw new IllegalArgumentException("A alocação não pode ser nula.");
         }
        
-        this.alocacoes.add(alocacao);
+        this.Turmas.add(Turma);
     }
 
-    public List<Alocacao> getAlocacoes() {
-        return Collections.unmodifiableList(alocacoes);
+    public List<Turma> getTurmas() {
+        return Collections.unmodifiableList(Turmas);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Resumo da Grade:\n");
-        for (Alocacao alocacao : alocacoes) {
-            sb.append(alocacao.toString()).append("\n");
+        for (Turma Turma : Turmas) {
+            sb.append(Turma.toString()).append("\n");
         }
         return sb.toString();
     }
