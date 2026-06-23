@@ -35,22 +35,22 @@ public class Main {
                         "Banco de Dados",
                         60);
 
-        Alocacao a1 =
-                new Alocacao(
+        Turma a1 =
+                new Turma(
                         d1,
                         p1,
                         h1);
 
-        Alocacao a2 =
-                new Alocacao(
+        Turma a2 =
+                new Turma(
                         d2,
                         p2,
                         h2);
 
         Grade grade = new Grade();
 
-        grade.adicionarAlocacao(a1);
-        grade.adicionarAlocacao(a2);
+        grade.adicionarTurma(a1);
+        grade.adicionarTurma(a2);
 
         grade.exibirGrade();
     }
