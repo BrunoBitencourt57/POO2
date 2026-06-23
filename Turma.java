@@ -1,17 +1,16 @@
-public class Alocacao {
+public class Turma {
 
     private Disciplina disciplina;
     private Professor professor;
     private Horario horario;
 
-
-    public Alocacao(Disciplina disciplina,
-                    Professor professor,
-                    Horario horario) {
+    public Turma(Disciplina disciplina,
+                 Professor professor,
+                 Horario horario) {
 
         if (disciplina == null ||
-                professor == null ||
-                horario == null) {
+            professor == null ||
+            horario == null) {
 
             throw new IllegalArgumentException("Dados inválidos.");
         }
