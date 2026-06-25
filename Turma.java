@@ -1,23 +1,31 @@
 public class Turma {
 
+    private String codigo;
     private Disciplina disciplina;
     private Professor professor;
     private Horario horario;
 
-    public Turma(Disciplina disciplina,
+    public Turma(String codigo,
+                 Disciplina disciplina,
                  Professor professor,
                  Horario horario) {
 
-        if (disciplina == null ||
-            professor == null ||
-            horario == null) {
-
-            throw new IllegalArgumentException("Dados inválidos.");
+        if (codigo == null || codigo.isBlank()) {
+            throw new IllegalArgumentException("Código da turma inválido.");
         }
 
+        if (disciplina == null || professor == null || horario == null) {
+            throw new IllegalArgumentException("Dados da turma inválidos.");
+        }
+
+        this.codigo = codigo;
         this.disciplina = disciplina;
         this.professor = professor;
         this.horario = horario;
+    }
+
+    public String getCodigo() {
+        return codigo;
     }
 
     public Disciplina getDisciplina() {
@@ -34,10 +42,9 @@ public class Turma {
 
     @Override
     public String toString() {
-        return disciplina.getNome()
-                + " - "
-                + professor.getNome()
-                + " - "
-                + horario;
+        return "Turma " + codigo
+                + " | Disciplina: " + disciplina.getNome()
+                + " | Professor: " + professor.getNome()
+                + " | Horário: " + horario;
     }
 }
