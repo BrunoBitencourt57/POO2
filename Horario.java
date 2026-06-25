@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public final class Horario {
 
     private final DiaSemana diaSemana;
@@ -27,25 +29,15 @@ public final class Horario {
     }
 
     @Override
-    public boolean equals(Object obj) {
-
-        if (this == obj) {
-            return true;
-        }
-
-        if (!(obj instanceof Horario)) {
-            return false;
-        }
-
-        Horario outro = (Horario) obj;
-
-        return diaSemana == outro.diaSemana
-                && periodo == outro.periodo;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Horario)) return false;
+        Horario horario = (Horario) o;
+        return diaSemana == horario.diaSemana && periodo == horario.periodo;
     }
 
     @Override
     public int hashCode() {
-        return diaSemana.hashCode() * 31
-                + periodo.hashCode();
+        return Objects.hash(diaSemana, periodo);
     }
 }
