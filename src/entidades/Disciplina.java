@@ -1,12 +1,16 @@
+package entidades;
+
 public class Disciplina {
 
     private String codigo;
     private String nome;
     private int cargaHoraria;
+    private String competenciaNecessaria;
 
     public Disciplina(String codigo,
                       String nome,
-                      int cargaHoraria) {
+                      int cargaHoraria,
+                      String competenciaNecessaria) {
 
         if (codigo == null || codigo.isBlank()) {
             throw new IllegalArgumentException("Código inválido.");
@@ -16,9 +20,18 @@ public class Disciplina {
             throw new IllegalArgumentException("Nome inválido.");
         }
 
+        if (cargaHoraria <= 0) {
+            throw new IllegalArgumentException("Carga horária inválida.");
+        }
+
+        if (competenciaNecessaria == null || competenciaNecessaria.isBlank()) {
+            throw new IllegalArgumentException("Competência necessária inválida.");
+        }
+
         this.codigo = codigo;
         this.nome = nome;
         this.cargaHoraria = cargaHoraria;
+        this.competenciaNecessaria = competenciaNecessaria;
     }
 
     public String getCodigo() {
@@ -31,5 +44,14 @@ public class Disciplina {
 
     public int getCargaHoraria() {
         return cargaHoraria;
+    }
+
+    public String getCompetenciaNecessaria() {
+        return competenciaNecessaria;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " (" + codigo + ")";
     }
 }

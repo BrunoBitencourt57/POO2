@@ -1,7 +1,6 @@
-# POO2
-
-Adriana Parra Agnolin
-Brayan Jone Bitencourt Jaques
-Bruno Henrique Moura Bitencourt
-Carlos Eduardo Dorneles
-Lucas Jaques Paiva
+### Integrantes do Grupo:
+- Adriana Agnolin
+- Brayan Jaques
+- Bruno Bitencourt
+- Carlos Dorneles
+- Lucas Paiva
